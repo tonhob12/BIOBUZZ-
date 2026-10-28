@@ -73,14 +73,19 @@ public class Constants {
                 Controller primaryTranslationalForward =
                         Controller.proportional(0.3);
 
+
                 Controller secondaryTranslationalForward =
                         Controller.proportional(0.1);
+
 
                 Controller primaryTranslationalLateral =
                         Controller.proportional(0.3);
 
+
                 Controller secondaryTranslationalLateral =
                         Controller.proportional(0.1);
+
+
 
 
                 c.forwardTranslational.set(
@@ -93,6 +98,8 @@ public class Constants {
                 );
 
 
+
+
                 c.strafeTranslational.set(
                         Controller.piecewise(
                                 secondaryTranslationalLateral
@@ -103,9 +110,13 @@ public class Constants {
                 );
 
 
+
+
                 c.coast.set(
                         Controller.proportionalFeedforward(0.010978350889324107)
                 );
+
+
 
 
                 c.brake.set(
@@ -113,9 +124,13 @@ public class Constants {
                 );
 
 
+
+
                 c.headingFeedback.set(
                         Controller.proportional(5.258721785960744)
                 );
+
+
 
 
                 c.headingBrakeCoefficients.set(
@@ -126,12 +141,16 @@ public class Constants {
                 );
 
 
+
+
                 c.linearBrakeCoefficients.set(
                         Matrix.diag(
                                 0.10605894992901523,
                                 0.08719146175596092
                         )
                 );
+
+
 
 
                 c.quadraticBrakeCoefficients.set(
@@ -142,9 +161,13 @@ public class Constants {
                 );
 
 
+
+
                 c.maxAchievableForwardVelocity.set(
                         67.29777514840676
                 );
+
+
 
 
                 c.maxAchievableStrafeVelocity.set(
@@ -152,9 +175,13 @@ public class Constants {
                 );
 
 
+
+
                 c.naturalForwardDeceleration.set(
                         26.354350754178476
                 );
+
+
 
 
                 c.naturalStrafeDeceleration.set(
@@ -164,11 +191,15 @@ public class Constants {
     );
 
 
+
+
     // =========================
     // CREATE FOLLOWER
     // =========================
 
+
     public static Follower create(HardwareMap hardwareMap) {
+
 
         return new Follower(
                 new PinpointLocalizer(
@@ -176,10 +207,12 @@ public class Constants {
                         localizerConfig
                 ),
 
+
                 new Mecanum(
                         hardwareMap,
                         drivetrainConfig
                 ),
+
 
                 new Foresight(
                         foresightConfig
@@ -187,3 +220,4 @@ public class Constants {
         );
     }
 }
+
